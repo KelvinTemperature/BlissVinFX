@@ -1,6 +1,6 @@
-// ConverterScreen.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Picker } from '@react-native-picker/picker';
 
 const ConverterScreen = () => {
@@ -58,16 +58,18 @@ const ConverterScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.heading}>Currency Converter</Text>
-
-      <TextInput
-        style={styles.input}
-        placeholder="Enter amount"
-        keyboardType="numeric"
-        value={amount}
-        onChangeText={setAmount}
-      />
+      
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter amount"
+          keyboardType="numeric"
+          value={amount}
+          onChangeText={setAmount}
+        />
+      </View>
 
       <View style={styles.pickerContainer}>
         <Picker
@@ -95,38 +97,50 @@ const ConverterScreen = () => {
         </Picker>
       </View>
 
-      <Button title="Convert" onPress={handleConvert} />
-      <Button title="Reset" onPress={handleReset} color="red" />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={handleConvert}>
+          <Icon name="currency-usd" size={20} color="#fff" />
+          <Text style={styles.buttonText}>Convert</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.resetButton]} onPress={handleReset}>
+          <Icon name="restart" size={20} color="#fff" />
+          <Text style={styles.buttonText}>Reset</Text>
+        </TouchableOpacity>
+      </View>
 
       {convertedAmount ? (
         <Text style={styles.result}>Converted Amount: {convertedAmount}</Text>
       ) : null}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'lightgreen',
     padding: 20,
-    backgroundColor: '#f8f9fa',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   heading: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 20,
     color: '#007bff',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  inputContainer: {
+    width: '100%',
+    marginBottom: 20,
   },
   input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    width: '100%',
-    paddingHorizontal: 10,
-    marginBottom: 20,
+    height: 50,
+    borderColor: '#007bff',
+    borderWidth: 2,
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    fontSize: 18,
+    color: '#333',
   },
   pickerContainer: {
     width: '100%',
@@ -135,15 +149,40 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     width: '100%',
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
+    borderColor: '#007bff',
+    borderWidth: 2,
+    borderRadius: 10,
+    color: '#333',
   },
-  result: {
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  button: {
+    flex: 1,
+    backgroundColor: '#007bff',
+    padding: 15,
+    borderRadius: 10,
+    marginHorizontal: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resetButton: {
+    backgroundColor: '#dc3545',
+  },
+  buttonText: {
+    color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 20,
-    color: 'green',
+    marginLeft: 10,
+  },
+  result: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#28a745',
   },
 });
 
