@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ConverterScreen from './screens/ConverterScreen';
 import ConversionScreen from './screens/ConversionScreen';
+import CandyCrushGameScreen from './screens/CandyCrushGameScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Converter" component={ConverterScreen} />
         <Stack.Screen name="Conversion" component={ConversionScreen} />
+        <Stack.Screen name="CandyCrushGame" component={CandyCrushGameScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

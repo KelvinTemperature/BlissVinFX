@@ -27,6 +27,13 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Read Our Blog</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('CandyCrushGame')}
+      >
+        <Text style={styles.buttonText}>Play Game</Text>
+      </TouchableOpacity>
     </View>
   );
 };
