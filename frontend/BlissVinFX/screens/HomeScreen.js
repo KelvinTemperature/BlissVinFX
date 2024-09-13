@@ -49,13 +49,6 @@ const HomeScreen = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('CandyCrushGame')}
-      >
-        <Text style={styles.buttonText}>Play Game</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
         onPress={() => navigation.navigate('Calculator')}
       >
         <Text style={styles.buttonText}>Calculator</Text>
@@ -68,7 +61,21 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.buttonText}>Calendar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
+        <TouchableOpacity
+  style={styles.button}
+  onPress={() => navigation.navigate('ShootingGame')}
+>
+  <Text style={styles.buttonText}>Shooting Game</Text>
+</TouchableOpacity>
+
+<TouchableOpacity
+  style={styles.button}
+  onPress={() => navigation.navigate('WordPuzzle')}
+>
+  <Text style={styles.buttonText}>Word Puzzle</Text>
+</TouchableOpacity>
+
+<TouchableOpacity
           style={styles.animatedButtonContent}
           onPress={() => {
             animateButton();
