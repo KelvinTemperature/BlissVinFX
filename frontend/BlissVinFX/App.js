@@ -10,10 +10,11 @@ import ConversionScreen from './screens/ConversionScreen';
 import CurrencyQuestScreen from './screens/CurrencyQuestScreen';
 import CalculatorScreen from './screens/CalculatorScreen';
 import CalendarScreen from './screens/CalendarScreen';
-import BlogScreen from './screens/BlogScreen';
+import BlogScreen from './screens/BlogScreen';;
 
 // Import game screens
 import ShootingGameScreen from './screens/games/shooting/ShootingGameScreen';
+import ShootScreen from './screens/games/shooting/ShootScreen';
 import WordPuzzleScreen from './screens/games/wordPuzzle/WordPuzzleScreen';
 
 // Create a stack navigator
@@ -31,6 +32,7 @@ export default function App() {
         <Stack.Screen name="Calendar" component={CalendarScreen} />
         <Stack.Screen name="Blog" component={BlogScreen} />
         <Stack.Screen name="ShootingGame" component={ShootingGameScreen} />
+        <Stack.Screen name="ShootGame" component={ShootScreen} />
         <Stack.Screen name="WordPuzzle" component={WordPuzzleScreen} />
       </Stack.Navigator>
     </NavigationContainer>

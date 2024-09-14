@@ -61,11 +61,18 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.buttonText}>Calendar</Text>
       </TouchableOpacity>
 
-        <TouchableOpacity
+      <TouchableOpacity
   style={styles.button}
   onPress={() => navigation.navigate('ShootingGame')}
 >
   <Text style={styles.buttonText}>Shooting Game</Text>
+</TouchableOpacity>
+
+<TouchableOpacity
+  style={styles.button}
+  onPress={() => navigation.navigate('ShootGame')}
+>
+  <Text style={styles.buttonText}>Shoot Game</Text>
 </TouchableOpacity>
 
 <TouchableOpacity
