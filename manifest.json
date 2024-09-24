@@ -1,0 +1,9 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "currency-converter-frontend",
+  "short_name": "currency-converter-frontend",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}
